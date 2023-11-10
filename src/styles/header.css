@@ -1,0 +1,20 @@
+.header {
+    height: 100px;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+/*ESTILOS DEL MENU*/
+.menu {
+    display: flex;
+}
+
+.tituloHeader {
+    font-family: 'Lilita One', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 40px;
+}
