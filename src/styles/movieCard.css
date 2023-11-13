@@ -1,0 +1,66 @@
+.movicard{
+    height: 30rem;
+    width: 25rem;
+    background-color:brown;
+    text-align: center;
+    
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 2rem;
+    border-radius: 4%;
+    padding: 1rem;
+}
+
+
+
+/*ESTILOS LISTADO FILMS*/
+.listadoFilms{
+    background-color: black;
+    
+    
+}
+
+.films{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+   
+}
+
+.languaje{
+    color: white;
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+   
+}
+.btnlanguaje{
+    background-color: #fe5000;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-right: 1rem;
+}
+
+.pagintation{
+    border: none;
+    display: flex;
+    font-size: 2rem;
+    background-color: inherit;
+    margin: 0 auto;
+    width: fit-content;
+    padding: 5rem;
+    color: white;
+}
+.btnseemore:hover{
+    color:  #fe5000;
+}
+
+.titleListado{
+font-size: 4rem;
+font-family: 'Poppins', sans-serif;
+display: flex;
+margin: 5rem auto;
+margin-top: 0rem;
+padding-top: 5rem;
+width: fit-content;
+color:  #fe5000;
+}

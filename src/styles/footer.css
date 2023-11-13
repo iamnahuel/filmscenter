@@ -1,0 +1,13 @@
+.footer{
+    height: 100px;
+    width: 100%;
+    background-color:  #fe5000;
+    padding: 20px;
+    display: block;
+    display: flex;
+    justify-content: space-between;
+    
+}
+Text {
+    font-size: 2rem;
+ }

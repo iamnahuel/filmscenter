@@ -1,0 +1,13 @@
+.header {
+    height: 100px;
+    width: 100%;
+    background-color: #fe5000;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+/*ESTILOS DEL MENU*/
+.menu {
+    display: flex;
+}
