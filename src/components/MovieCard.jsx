@@ -1,38 +1,44 @@
 import React from "react";
+import { Link } from 'react-router-dom'
+import { useApp } from "../contex";
 import '../styles/movieCard.css';
-import { Card, CardHeader, CardBody, CardFooter, Divider, ButtonGroup, Button, Image, Text, Stack, Heading } from '@chakra-ui/react';
 
-const MovieCard = ({ movie }) => {
-    const { title, overview, poster_path, vote_average, vote_count, release_date } = movie;
+import { useEffect } from 'react'
+//import { Link } from "react-router-dom"
+
+const MovieCard = ({ movie }) => { //LA FUNCION de COMPONENTES NO PUEDE SER ASINCRONA 
+    const { title, overview, poster_path, vote_average, vote_count, release_date, id } = movie
+    const realStar = Math.round(vote_average / 2)
+
+    const { handleSeeMovie } = useApp()
+
+
     return (
+        <button className="btn-movie" onClick={(e) => handleSeeMovie(e, movie)}>
+            <article className='moviecard'>
+                <div className="moviecard-image">
+                    <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt={`Poster ${title}`} />
+                </div>
+                <div className='moviecard-description'>
+                    <h3>{title}</h3>
 
-        <Card maxW='sm' margin={'1rem'}>
-            <CardBody>
-                <Image
-                    src={`https://image.tmdb.org/t/p/w500${poster_path}`}
-                    alt={`Poster ${title}`}
-                    borderRadius='lg'
-                />
-                <Stack mt='6' spacing='3'>
-                    <Heading size='md'>{title}</Heading>
-                    <Text>
+                    <p>
                         {overview}
-                    </Text>
-                </Stack>
-            </CardBody>
-            <Divider />
-            <CardFooter>
-                <ButtonGroup spacing='2'>
-                    <Button variant='solid' colorScheme='blue'>
-                        Reproducir
-                    </Button>
-                    <Button variant='ghost' colorScheme='blue'>
-                        Add to cart
-                    </Button>
-                </ButtonGroup>
-            </CardFooter>
-        </Card>
+                    </p>
+
+                    <span className="moviecard-vote">
+                        ⭐ {realStar}/5
+                    </span>
+
+
+                </div>
+
+            </article>
+        </button>
     )
 }
+
+
+
 
 export default MovieCard;

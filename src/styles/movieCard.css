@@ -1,66 +1,184 @@
-.movicard{
-    height: 30rem;
-    width: 25rem;
-    background-color:brown;
-    text-align: center;
-    
-    font-family: 'Poppins', sans-serif;
-    color: white;
-    font-size: 2rem;
-    border-radius: 4%;
-    padding: 1rem;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
 }
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+
+
 
 
 
 /*ESTILOS LISTADO FILMS*/
-.listadoFilms{
+.listadoFilms {
     background-color: black;
-    
-    
+
+
 }
 
-.films{
+.films {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-   
+
 }
 
-.languaje{
+.languaje {
     color: white;
     font-size: 2rem;
     font-family: 'Poppins', sans-serif;
-   
+
 }
-.btnlanguaje{
+
+.btnlanguaje {
     background-color: #fe5000;
     padding: 1rem;
     border-radius: 1rem;
     margin-right: 1rem;
 }
 
-.pagintation{
-    border: none;
-    display: flex;
-    font-size: 2rem;
-    background-color: inherit;
-    margin: 0 auto;
-    width: fit-content;
-    padding: 5rem;
-    color: white;
-}
-.btnseemore:hover{
-    color:  #fe5000;
+
+
+.btnseemore:hover {
+    color: #fe5000;
 }
 
-.titleListado{
-font-size: 4rem;
-font-family: 'Poppins', sans-serif;
-display: flex;
-margin: 5rem auto;
-margin-top: 0rem;
-padding-top: 5rem;
-width: fit-content;
-color:  #fe5000;
+
+
+.idiomasFilms {
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    border-radius: 1rem;
+    padding: 1rem;
+    width: fit-content;
+    color: white;
+    background-color: #fe5000;
+}
+
+
+/*ESTILOS MOVIE CARD*/
+.moviecard {
+    padding: 0.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 30rem;
+
+}
+
+.moviecard-description {
+    display: block;
+    padding: 2rem;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.moviecard h3 {
+    font-size: 2.5rem;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.moviecard-image {
+    border-radius: 0.75rem;
+    overflow: hidden;
+}
+
+.moviecard:hover .moviecard-image img {
+    transform: scale(1.05);
+}
+
+
+/*ESTILOS MOVIE*/
+.container {
+    width: 95%;
+    max-width: 120rem; /* 1200px */
+    width: min(95%, 120rem); /* Significa lo mismo que las 2 lineas previas */
+    margin: 0 auto;
+  }
+.onemovie {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 10rem;
+  }
+  
+  .onemovie-desktop {
+    display: none;
+  }
+  .onemovie-mobile {
+    display: block;
+  }
+
+
+/*MEDIA QERRY*/
+.moviecard-description {
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .moviecard {
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .moviecard-description {
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        color: white;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0.5rem;
+        border-radius: 0.75rem;
+        text-align: center;
+        z-index: 10;
+        bottom: -100%;
+        left: 0;
+        opacity: 0;
+
+    }
+
+    .moviecard:hover .moviecard-description {
+        bottom: 0;
+        opacity: 1;
+    }
+}
+
+@media (min-width: 992px) {
+    .content {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .onemovie {
+        width: 80rem;
+        max-width: 95%;
+        background-color: #f1f1f1;
+        padding: 2rem;
+        box-shadow: 1px 1px 10px 1px rgba(20, 20, 20, 0.1);
+        border-radius: 1rem;
+      }
+      .onemovie img {
+        border-radius: 0.75rem;
+      }
+    
+      .onemovie-desktop {
+        display: block;
+      }
+      .onemovie-mobile {
+        display: none;
+      }
 }
